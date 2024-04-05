@@ -1,0 +1,11 @@
+.chatroom-container {
+    background-color: rgb(107, 105, 101);
+    min-height: 600px;
+  }
+
+.footer-chat{
+    background-color: rgb(71, 70, 69);
+    min-height: 140px;
+    padding-top: 20px;
+    
+}
