@@ -40,7 +40,7 @@ export default function Signedin() {
         transition={{ ease: "easeOut", duration: 1, delay: 2 }} // Delay of 2 seconds
         onClick={()=>{Nav();}} //navigate to the chatroom
       >
-       Open Chats
+       Open the chats now!
        <i className="fa-solid fa-comment" style={{marginLeft: '40px', fontSize: '30px'}}></i>
       </motion.button>
     </div>
