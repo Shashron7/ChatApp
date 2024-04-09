@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UseTypingEffect from "./UseTypingEffect";
 import './Welcome.css';
-// import { initializeApp } from "firebase/app";
-// import { signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo} from "firebase/auth";
+
 import { useNavigate } from "react-router-dom";
 import {app, signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo } from './Firebase'   //importing from Firebase.js
 
@@ -17,17 +16,6 @@ const texts = [                         //typewriter text animation
   "This is a chat application ",
   "Enjoy chatting!",
 ];
-// const firebaseConfig = {       //fire base configuration details
-//   apiKey: "AIzaSyDoPTIIOtOhE8K_uwBAuoJ02Vqk52EGVIg",
-//   authDomain: "chatapp-7b93e.firebaseapp.com",
-//   projectId: "chatapp-7b93e",
-//   storageBucket: "chatapp-7b93e.appspot.com",
-//   messagingSenderId: "446573562903",
-//   appId: "1:446573562903:web:8d5c89a9f007113bb8e052",
-//   measurementId: "G-PG2XKKQ02K"
-// };
-
-// const app = initializeApp(firebaseConfig); //app object
 
 const auth=getAuth(app);  //auth is the authorization object
 
@@ -72,7 +60,7 @@ export default function Welcome() {
         console.log(details);
         console.log("User logged in:", result.user.displayName);
         let name_user=result.user.displayName;
-        navigate(`/in?username=${name_user}`);  //navigating to the signedinpage and passing the name
+        navigate('/in');  //navigating to the signedinpage and passing the name
       } else {
         console.log("No user logged in");
       }

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo } from "firebase/auth";
+import { signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo, signOut } from "firebase/auth";
 
 
 
@@ -17,4 +17,4 @@ const firebaseConfig = {       //fire base configuration details
   const app = initializeApp(firebaseConfig);
 
 
-  export { app, signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo };
+  export { app, signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo, signOut };

@@ -4,10 +4,13 @@ import Welcome from "./Components/Welcome";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Signedin from "./Components/Signedin";
 import ChatRoom from "./Components/ChatRoom";
+import { UserProvider } from "./Components/UserContext";
+
 
 function App() {
   return (
     <div className="App">
+      <UserProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -16,6 +19,7 @@ function App() {
           <Route path="/chat" element={<ChatRoom />}></Route>
         </Routes>
       </Router>
+      </UserProvider>
     </div>
   );
 }
