@@ -69,7 +69,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <button type="button" class="btn btn-light" onClick={handleSignOut}>
+          <button type="button" className="btn btn-light" onClick={handleSignOut}>
             {logged}
           </button>
           {userPhotoURL && <img src={userPhotoURL} className="pfp"></img>}
