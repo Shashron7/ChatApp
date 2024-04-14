@@ -4,6 +4,7 @@ import { app, getAuth, signOut } from "./Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import {useNavigate} from 'react-router-dom';
 import "./Navbar.css";
+import picid from './picid.png';
 
 export default function Navbar() {
   const { userPhotoURL,setUserPhotoURL } = useUser();  //using the context API custom hook
