@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import {app, signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo } from './Firebase'   //importing from Firebase.js
 
 
-import load from './Infinity@1.25x-0.9s-200px-200px.gif';
+import load from './3-dots-bounce.svg';
+import pic from './anim.gif'
 const googleAuthProvider= new GoogleAuthProvider();
 
 
@@ -77,18 +78,23 @@ export default function Welcome() {
 
 
   return (
-    <div style={{ marginTop: "200px", minHeight: "1000px" }}>
+    <div className="whole" >
       <div className="container">
-        {loading ? <img src={load}/> : (<div
+        {loading ? <img src={load} style={{height: '100px'}}/> : (<div
           className="login"
-          style={{ marginTop: "100px", fontFamily: "Reddit Mono" }}
+          style={{fontFamily: "Reddit Mono" }}
         >
-          <div className="d-flex flex-column mb-3 ">
+          <div  >
             <h3 style={{ marginBottom: "60px" }}>Get started chatting....</h3>
-            <div class="text-center">
+            <div className="d-flex flex-column mb-3 button_pic">
+            <img
+              src={pic}
+              style={{ height: "100 px", width: "200 px" , marginTop: '50px'}}
+              className="p-2 img-chat"
+            />
               <button
                 type="button"
-                class="btn btn-primary btn-lg custom-but"
+                className="btn btn-primary btn-lg custom-but p-2"
                 style={{width: "500px"}}
                 onClick={handleSignInWithGoogle}
               >
@@ -97,10 +103,7 @@ export default function Welcome() {
               </button>
             
 
-            <img
-              src="https://img.freepik.com/free-vector/hand-drawn-flat-people-talking_23-2149051163.jpg"
-              style={{ height: "auto", width: "900px" , marginTop: '50px'}}
-            />
+           
             </div>
           </div>
           <h1 style={{ fontFamily: "Reddit Mono", marginTop: "100px" }}>

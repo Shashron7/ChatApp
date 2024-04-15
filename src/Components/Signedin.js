@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { app, getAuth } from './Firebase'
-import load from './Infinity@1.25x-0.9s-200px-200px.gif';
-
+import load from './3-dots-bounce.svg';
+import './Signedin.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useUser } from "./UserContext";
 
@@ -37,18 +37,18 @@ export default function Signedin() {
 
 
   return (
-    <div style={{ marginTop: "700px", fontFamily: "Reddit Mono" }}>
+    <div className="whole">
      {loading ? <img src={load}></img> : (<div>
       <motion.h2
-        initial={{ y: 0, fontSize: "50px", opacity: 0 }}
-        animate={{ y: -500, fontSize: "50px", opacity: 1 }}
+        initial={{ y: 300, fontSize: "50px", opacity: 0 }}
+        animate={{ y: 50, fontSize: "50px", opacity: 1 }}
         transition={{ ease: "easeOut", duration: 1}}
       >
         You are signed in
       </motion.h2>
       <motion.h2
-        initial={{ y: 0, fontSize: "50px", opacity: 0 }} // Initial state with opacity set to 0
-        animate={{ y: -400, fontSize: "50px", opacity: 1 }} // Animation state with opacity set to 1
+        initial={{ y: 300, fontSize: "50px", opacity: 0 }} // Initial state with opacity set to 0
+        animate={{ y: 100, fontSize: "50px", opacity: 1 }} // Animation state with opacity set to 1
         transition={{ ease: "easeOut", duration: 1, delay: 1 }} // Delay of 1 seconds
       >
         Welcome {userName}!
@@ -59,7 +59,7 @@ export default function Signedin() {
         class="btn btn-primary btn-lg custom-but"
         style={{ width: "400px" , height: 'auto'}}
         initial={{ y: 0, fontSize: "20px", opacity: 0 }} // Initial state with opacity set to 0
-        animate={{ y: -300, fontSize: "20px", opacity: 1 }} // Animation state with opacity set to 1
+        animate={{ y: 300, fontSize: "20px", opacity: 1 }} // Animation state with opacity set to 1
         transition={{ ease: "easeOut", duration: 1, delay: 2 }} // Delay of 2 seconds
         onClick={()=>{Nav();}} //navigate to the chatroom
       >

@@ -1,3 +1,22 @@
 .custom-but{
     background-color: rgb(72, 165, 162);
 }
+.whole
+{
+    background-color: rgb(3, 17, 172);
+    min-height: 655px;
+    padding-top: 100px;
+    color: rgb(204, 182, 226);
+
+}
+
+.img-chat{
+    height: 100px;
+    width: 100px;
+    margin-left: 200px;
+}
+
+.button_pic{
+  margin-left: 400px;
+  width: 50%;
+}
