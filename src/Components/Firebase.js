@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo, signOut } from "firebase/auth";
 
-
+//This file will have all the firebase config details so that we can easily access them in multiple files
 
 const firebaseConfig = {       //fire base configuration details
     apiKey: "AIzaSyDoPTIIOtOhE8K_uwBAuoJ02Vqk52EGVIg",
@@ -14,7 +14,7 @@ const firebaseConfig = {       //fire base configuration details
   };
 
 
-  const app = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig); //initialising app here 
 
 
   export { app, signInWithRedirect, getRedirectResult, GoogleAuthProvider, getAuth, getAdditionalUserInfo, signOut };
