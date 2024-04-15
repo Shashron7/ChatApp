@@ -1,22 +1,37 @@
-.custom-but{
-    background-color: rgb(72, 165, 162);
-}
-.whole
-{
-    background-color: rgb(3, 17, 172);
-    min-height: 655px;
+
+
+.container-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Set container minimum height to viewport height */
     padding-top: 100px;
     color: rgb(204, 182, 226);
-
+    background-color: rgb(3, 17, 172); 
 }
 
-.img-chat{
+.img-chat {
     height: 100px;
     width: 100px;
     margin-left: 200px;
 }
 
-.button_pic{
-  margin-left: 400px;
-  width: 50%;
+.button_pic {
+    width: 50%;
+}
+
+.custom-but {
+    background-color: rgb(72, 165, 162);
+}
+
+.whole {
+    min-height: 100vh; /* Set minimum height to viewport height */
+}
+
+.texts
+{
+    padding: 0px;
+    margin-top: -200px;
+    min-height: 200px;
 }
