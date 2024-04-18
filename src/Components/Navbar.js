@@ -10,7 +10,7 @@ export default function Navbar() {
   const { userPhotoURL,setUserPhotoURL } = useUser();  //using the context API custom hook
   const auth = getAuth(app);
   const [user, loading, error] = useAuthState(auth);
-  const [logged,setLogged]=useState('Login');
+  const [logged,setLogged]=useState(null);
 
   const navigate=useNavigate();
   
@@ -22,7 +22,7 @@ export default function Navbar() {
     }
     else
     {
-      setLogged('Login');
+      setLogged(null) //no need of login on the for
       setUserPhotoURL(null); //removing the picture
     } //if user is present then login
   })
@@ -70,9 +70,9 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <button type="button" className="btn btn-light" onClick={handleSignOut}>
+          {logged && (<button type="button" className="btn btn-light" onClick={handleSignOut}>  
             {logged}
-          </button>
+          </button>)} 
           {userPhotoURL && <img src={userPhotoURL} className="pfp"></img>}
         </div>
       </nav>
