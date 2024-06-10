@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UseTypingEffect from "./UseTypingEffect";
 import "./Welcome.css";
-
+import LandingPageAtom from './Atom.js'
 import { useNavigate } from "react-router-dom";
 import {
   app,
@@ -15,6 +15,10 @@ import { motion } from "framer-motion";
 
 import load from "./3-dots-bounce.svg";
 import pic from "./anim.gif";
+import { useRecoilState, useSetRecoilState } from "recoil";
+
+
+
 const googleAuthProvider = new GoogleAuthProvider();
 
 const texts = [
@@ -32,7 +36,7 @@ export default function Welcome() {
   const [loading, setLoading] = useState(false);
   const textToShow = UseTypingEffect(texts[textIndex], 50, true);
   const navigate = useNavigate();
-
+  const setLpa=useSetRecoilState(LandingPageAtom);
   const handleSignInWithGoogle = async () => {
     try {
       await signInWithRedirect(auth, googleAuthProvider); //Doesnt return anything, the results and errors are handled by getRedirectResult
@@ -60,12 +64,16 @@ export default function Welcome() {
     try {
       setLoading(true);
       const result = await getRedirectResult(auth);
+      
       if (result && result.user) {
         const details = getAdditionalUserInfo(result);
         console.log(details);
         console.log("User logged in:", result.user.displayName);
         let name_user = result.user.displayName;
+        setLpa(false);
+        console.log("LPA set to false");
         navigate("/in"); //navigating to the signedinpage and passing the name
+        
       } else {
         console.log("No user logged in");
       }
@@ -78,6 +86,7 @@ export default function Welcome() {
   useEffect(() => {
     //after rendering we are checking if any user is logged in or not
     debugRedirectResult();
+    
   }, []);
 
   return (

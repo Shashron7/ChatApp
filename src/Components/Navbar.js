@@ -5,18 +5,20 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {useNavigate} from 'react-router-dom';
 import "./Navbar.css";
 import picid from './picid.png';
+import { useRecoilValue } from "recoil";
+import LandingPageAtom from './Atom.js'
 
 export default function Navbar() {
   const { userPhotoURL,setUserPhotoURL } = useUser();  //using the context API custom hook
   const auth = getAuth(app);
   const [user, loading, error] = useAuthState(auth);
   const [logged,setLogged]=useState(null);
-
+  const lpa=useRecoilValue(LandingPageAtom);
   const navigate=useNavigate();
   
   
   useEffect(()=>{
-    if(user) //if there is a user present then logout
+    if(user && !lpa) //if there is a user present then logout
     {
       setLogged('Logout');
     }

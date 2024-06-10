@@ -6,7 +6,7 @@ import Signedin from "./Components/Signedin";
 import ChatRoom from "./Components/ChatRoom";
 import { UserProvider } from "./Components/UserContext";
 import { app, getAuth } from "./Components/Firebase";
-import { useEffect } from "react";
+import { RecoilRoot } from "recoil";
 
 function App() {
   
@@ -14,12 +14,14 @@ function App() {
     <div className="App">
       <UserProvider>
         <Router>
+        <RecoilRoot>
           <Navbar />
           <Routes>
             <Route path="/" element={<Welcome />}></Route>
             <Route path="/in" element={<Signedin />}></Route>
             <Route path="/chat" element={<ChatRoom />}></Route>
           </Routes>
+          </RecoilRoot>
         </Router>
       </UserProvider>
     </div>
